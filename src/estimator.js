@@ -1,4 +1,5 @@
 const covid19ImpactEstimator = (data) => {
+  // OUTPUT DECLARATION
   const output = {
     data: { ...data }, // the input data you got
     impact: {}, // your best case estimation
@@ -13,6 +14,7 @@ const covid19ImpactEstimator = (data) => {
     return useableBedSpace - severeCasesByRequestedTime;
   };
 
+  // LOGICS
   output.impact.currentlyInfected = data.reportedCases * 10;
   output.severeImpact.currentlyInfected = data.reportedCases * 50;
   output.impact.infectionsByRequestedTime =
@@ -58,8 +60,7 @@ const covid19ImpactEstimator = (data) => {
       data.timeToElapse
   );
 
-  // output object
-  return output;
+  // OUTPUT OBJECT
+  return { ...output };
 };
-
 export default covid19ImpactEstimator;
