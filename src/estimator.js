@@ -1,5 +1,4 @@
 const covid19ImpactEstimator = (data) => {
-  // OUTPUT DECLARATION
   const output = {
     data: { ...data }, // the input data you got
     impact: {}, // your best case estimation
@@ -10,11 +9,10 @@ const covid19ImpactEstimator = (data) => {
     totalHospitalBeds,
     severeCasesByRequestedTime
   ) => {
-    const useableBedSpace = Math.floor(totalHospitalBeds * 0.35);
+    let useableBedSpace = Math.floor(totalHospitalBeds * 0.35);
     return useableBedSpace - severeCasesByRequestedTime;
   };
 
-  // LOGICS
   output.impact.currentlyInfected = data.reportedCases * 10;
   output.severeImpact.currentlyInfected = data.reportedCases * 50;
   output.impact.infectionsByRequestedTime =
@@ -48,19 +46,20 @@ const covid19ImpactEstimator = (data) => {
     output.severeImpact.severeCasesByRequestedTime * 0.02
   );
   output.impact.dollarsInFlight = Math.floor(
-    output.impact.severeCasesByRequestedTime 
-      * data.region.avgDailyIncomePopulation
-      * data.region.avgDailyIncomeInUSD
-      * data.timeToElapse
+    output.impact.severeCasesByRequestedTime *
+      data.region.avgDailyIncomePopulation *
+      data.region.avgDailyIncomeInUSD *
+      data.timeToElapse
   );
   output.severeImpact.dollarsInFlight = Math.floor(
-    output.severeImpact.severeCasesByRequestedTime
-      * data.region.avgDailyIncomePopulation
-      * data.region.avgDailyIncomeInUSD
-      * data.timeToElapse
+    output.severeImpact.severeCasesByRequestedTime *
+      data.region.avgDailyIncomePopulation *
+      data.region.avgDailyIncomeInUSD *
+      data.timeToElapse
   );
 
-  // OUTPUT OBJECT
+  // output object
   return { ...output };
 };
+
 export default covid19ImpactEstimator;
