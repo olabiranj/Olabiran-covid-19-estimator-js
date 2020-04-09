@@ -28,16 +28,16 @@ const covid19ImpactEstimator = (data) => {
   const TE = data.timeToElapse;
   OP.Im.CI = data.reportedCases * 10;
   OP.SI.CI = data.reportedCases * 50;
-  OP.Im.IRT = OP.Im.CI * 2 ** Math.floor(normDate(PT, TE) / 3);
-  OP.SI.IRT = OP.SI.CI * 2 ** Math.floor(normDate(PT, TE) / 3);
-  OP.Im.SCRT = Math.floor(OP.Im.IRT * 0.15);
-  OP.SI.SCRT = Math.floor(OP.SI.IRT * 0.15);
+  OP.Im.IRT = OP.Im.CI * 2 ** Math.trunc(normDate(PT, TE) / 3);
+  OP.SI.IRT = OP.SI.CI * 2 ** Math.trunc(normDate(PT, TE) / 3);
+  OP.Im.SCRT = Math.trunc(OP.Im.IRT * 0.15);
+  OP.SI.SCRT = Math.trunc(OP.SI.IRT * 0.15);
   OP.Im.HBRT = getHBRT(data.totalHospitalBeds, OP.Im.SCRT);
   OP.SI.HBRT = getHBRT(data.totalHospitalBeds, OP.SI.SCRT);
-  OP.Im.CFIRT = Math.floor(OP.Im.SCRT * 0.05);
-  OP.SI.CFIRT = Math.floor(OP.SI.SCRT * 0.05);
-  OP.Im.CFVRT = Math.floor(OP.Im.SCRT * 0.02);
-  OP.SI.CFVRT = Math.floor(OP.SI.SCRT * 0.02);
+  OP.Im.CFIRT = Math.trunc(OP.Im.SCRT * 0.05);
+  OP.SI.CFIRT = Math.trunc(OP.SI.SCRT * 0.05);
+  OP.Im.CFVRT = Math.trunc(OP.Im.SCRT * 0.02);
+  OP.SI.CFVRT = Math.trunc(OP.SI.SCRT * 0.02);
   OP.Im.dollarsInFlight = Math.floor(
     OP.Im.SCRT * ADIP * ADIU * normDate(PT, TE)
   );
