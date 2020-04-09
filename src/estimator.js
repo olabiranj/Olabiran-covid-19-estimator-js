@@ -6,7 +6,7 @@ const covid19ImpactEstimator = (data) => {
   };
 
   const getHBRT = (totalHospitalBeds, SCRT) => {
-    const useableBedSpace = Math.floor(totalHospitalBeds * 0.35);
+    const useableBedSpace = Math.trunc(totalHospitalBeds * 0.35);
     return useableBedSpace - SCRT;
   };
   const normDate = (period, figure) => {
@@ -38,10 +38,10 @@ const covid19ImpactEstimator = (data) => {
   OP.SI.CFIRT = Math.trunc(OP.SI.SCRT * 0.05);
   OP.Im.CFVRT = Math.trunc(OP.Im.SCRT * 0.02);
   OP.SI.CFVRT = Math.trunc(OP.SI.SCRT * 0.02);
-  OP.Im.dollarsInFlight = Math.floor(
+  OP.Im.dollarsInFlight = Math.trunc(
     OP.Im.SCRT * ADIP * ADIU * normDate(PT, TE)
   );
-  OP.SI.dollarsInFlight = Math.floor(
+  OP.SI.dollarsInFlight = Math.trunc(
     OP.SI.SCRT * ADIP * ADIU * normDate(PT, TE)
   );
 
