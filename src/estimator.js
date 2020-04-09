@@ -38,12 +38,8 @@ const covid19ImpactEstimator = (data) => {
   OP.SI.CFIRT = OP.SI.SCRT * 0.05;
   OP.Im.CFVRT = OP.Im.SCRT * 0.02;
   OP.SI.CFVRT = OP.SI.SCRT * 0.02;
-  OP.Im.dollarsInFlight = Math.trunc(
-    OP.Im.SCRT * ADIP * ADIU * normDate(PT, TE)
-  );
-  OP.SI.dollarsInFlight = Math.trunc(
-    OP.SI.SCRT * ADIP * ADIU * normDate(PT, TE)
-  );
+  OP.Im.dollarsInFlight = OP.Im.SCRT * ADIP * ADIU * normDate(PT, TE);
+  OP.SI.dollarsInFlight = OP.SI.SCRT * ADIP * ADIU * normDate(PT, TE);
 
   // OP object
   return {
