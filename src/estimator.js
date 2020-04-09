@@ -38,8 +38,8 @@ const covid19ImpactEstimator = (data) => {
   OP.SI.CFIRT = Math.trunc(OP.SI.IRT * 0.05);
   OP.Im.CFVRT = Math.trunc(OP.Im.IRT * 0.02);
   OP.SI.CFVRT = Math.trunc(OP.SI.IRT * 0.02);
-  OP.Im.DIF = OP.Im.SCRT * ADIP * ADIU * Math.trunc(normDate(PT, TE));
-  OP.SI.DIF = OP.SI.SCRT * ADIP * ADIU * Math.trunc(normDate(PT, TE));
+  OP.Im.DIF = OP.Im.IRT * ADIP * ADIU * Math.trunc(normDate(PT, TE));
+  OP.SI.DIF = OP.SI.IRT * ADIP * ADIU * Math.trunc(normDate(PT, TE));
 
   // OP object
   return {
