@@ -1,4 +1,4 @@
-const covid19ImEstimator = (data) => {
+const covid19ImpactEstimator = (data) => {
   const OP = {
     data: { ...data }, // the input data you got
     Im: {}, // your best case estimation
@@ -52,4 +52,4 @@ const covid19ImEstimator = (data) => {
   };
 };
 
-export default covid19ImEstimator;
+export default covid19ImpactEstimator;
