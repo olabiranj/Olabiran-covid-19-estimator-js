@@ -28,20 +28,20 @@ const output = {
     totalHospitalBeds: 1380614
   },
   impact: {
-    casesForICUByRequestedTime: 25881,
-    casesForVentilatorsByRequestedTime: 10352,
+    casesForICUByRequestedTime: 26502758,
+    casesForVentilatorsByRequestedTime: 10601103,
     currentlyInfected: 6740,
-    hospitalBedsByRequestedTime: -34418,
-    infectionsByRequestedTime: 3450880,
-    severeCasesByRequestedTime: 517632
+    hospitalBedsByRequestedTime: -529571954,
+    infectionsByRequestedTime: 3533701120,
+    severeCasesByRequestedTime: 530055168
   },
   severeImpact: {
-    casesForICUByRequestedTime: 129408,
-    casesForVentilatorsByRequestedTime: 51763,
+    casesForICUByRequestedTime: 132513792,
+    casesForVentilatorsByRequestedTime: 53005516,
     currentlyInfected: 33700,
-    hospitalBedsByRequestedTime: -2104946,
-    infectionsByRequestedTime: 17254400,
-    severeCasesByRequestedTime: 2588160
+    hospitalBedsByRequestedTime: -2649792626,
+    infectionsByRequestedTime: 17668505600,
+    severeCasesByRequestedTime: 2650275840
   }
 };
 test('should estimate COVID-19 cases', () => {
